@@ -58,7 +58,7 @@ def call_api_with_rate_limit(client, openai_model, messages):
         return None
 
 # Process user input and generate responses
-if prompt := st.chat_input("How can I help?"):
+if prompt := st.chat_input("Now happy ?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user", avatar=USER_AVATAR):
         st.markdown(prompt)
