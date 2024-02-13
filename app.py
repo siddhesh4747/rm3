@@ -11,7 +11,7 @@ st.title("Streamlit Chatbot Interface")
 
 USER_AVATAR = "👤"
 BOT_AVATAR = "🤖"
-client = OpenAI(api_key=os.getenv("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"))
+client = OpenAI(api_key=os.getenv("Your-API-Key"))
 
 # Ensure openai_model is initialized in session state
 if "openai_model" not in st.session_state:
@@ -54,7 +54,7 @@ def call_api_with_rate_limit(client, openai_model, messages):
         return response.choices
     except RateLimitError as e:
         print("Rate limit exceeded. Waiting for some time before retrying.")
-        time.sleep(10)  # Wait for 60 seconds before retrying
+        time.sleep(10)  # Wait for 10 seconds before retrying
         return None
 
 # Process user input and generate responses
